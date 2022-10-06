@@ -1,5 +1,6 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {PixabayApi} from "./js/pixabayApi";
 import { createMarkup } from './js/createMarkup';
@@ -8,6 +9,7 @@ import { createMarkup } from './js/createMarkup';
 const form=document.querySelector(".search-form")
 const loadBtn=document.querySelector(".load-more")
 const list=document.querySelector(".gallery")
+
 
 const pixabayApi=new PixabayApi;
 

@@ -3,14 +3,26 @@ export class PixabayApi{
     #query='';
     #totalPages=0;
     #perPage=40;
-    getPhotos(){
+    async getPhotos(){
         const url=`https://pixabay.com/api/?key=30406660-ac7e622e7ed4967628563eb0e&q=${this.#query}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${this.#perPage}&page=1&page=${this.#page}`;
-       return  fetch(url).then((response) => {
+
+        try{
+            const response= await fetch(url);
             if (!response.ok) {
-              throw new Error(response.status);
-            }
-            return response.json();
-          })
+                throw new Error(response.status);
+                }
+                return response.json();
+        }
+        catch(error)
+        {
+            console.log(error.message);
+        }
+    //    return  fetch(url).then((response) => {
+    //         if (!response.ok) {
+    //           throw new Error(response.status);
+    //         }
+    //         return response.json();
+    //       })
     }
     incrementPage()
     {
