@@ -39,10 +39,12 @@ const handleSubmit=(event)=>{
         {
             loadBtn.classList.remove("is-hidden");
         }
+        simple.refresh();
     }).catch(error=>{
         Notify.failure(error.message,"Щось пішло не так");
         clearPage();
     });
+    
     
 }
 
@@ -55,7 +57,7 @@ if(!pixabayApi.isShownOnLoadMore)
 pixabayApi.getPhotos().then(({hits})=>{
     const markup=createMarkup(hits)
     list.insertAdjacentHTML("beforeend",markup)
-
+    simple.refresh();
 }).catch(error=>{
     Notify.failure(error.message,"Щось пішло не так");
    clearPage();
@@ -72,6 +74,5 @@ form.addEventListener('submit',handleSubmit)
 
 loadBtn.addEventListener("click",onLoadMore)
 
-new SimpleLightbox('.gallery__link');
-
+const simple=new SimpleLightbox('.gallery__link');
 
