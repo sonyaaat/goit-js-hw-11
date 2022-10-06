@@ -4,14 +4,19 @@ export class PixabayApi{
     #totalPages=0;
     #perPage=40;
     async getPhotos(){
+        const axios = require('axios').default;
         const url=`https://pixabay.com/api/?key=30406660-ac7e622e7ed4967628563eb0e&q=${this.#query}&image_type=photo&orientation=horizontal&safesearch=true&per_page=${this.#perPage}&page=1&page=${this.#page}`;
 
         try{
-            const response= await fetch(url);
-            if (!response.ok) {
-                throw new Error(response.status);
-                }
-                return response.json();
+            const response= await axios.get(url);
+            // const response= await fetch(url);
+            console.log(response.data)
+            
+            // if (!response.ok) {
+            //     throw new Error(response.status);
+            //     }
+            return response.data;
+                // return await response.json();
         }
         catch(error)
         {
