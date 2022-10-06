@@ -1,0 +1,119 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    height: 100vh;
+    // background: linear-gradient(rgba(73, 70, 70, 0), rgba(107, 104, 104, 0.9));
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+  
+  
+.photo-card{
+    flex-basis: calc((100% - 120px) / 4);
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 #cccccc;
+    border-radius: 4px;
+}
+.photo{
+    width: 100%;
+    height: 220px;
+}
+.search-form {
+    width: 600px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  
+  .search-input {
+    font-size: 18px;
+    flex-grow: 1;
+    height: 40px;
+    padding-left: 15px;
+    border: 1px solid #303030;
+    border-radius: 8px;
+  }
+  
+  .search-btn,
+  .load-more {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #5858ee;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background-color 250ms linear;
+    & span {
+      margin-left: 8px;
+    }
+  }
+  .load-more {
+    display: block;
+    margin: 0 auto;
+  }
+  .load-more.is-hidden {
+    display: none;
+  }
+  .search-btn:hover,
+.search-btn:focus,
+.load-more:hover,
+.load-more:focus {
+  background-color: blue;
+}
+.info{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.info-item{
+    text-align: center;
+    &:not(:last-child)
+    {
+        margin-right: 13px;
+    }
+}
