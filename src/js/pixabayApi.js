@@ -9,25 +9,13 @@ export class PixabayApi{
 
         try{
             const response= await axios.get(url);
-            // const response= await fetch(url);
             console.log(response.data)
-            
-            // if (!response.ok) {
-            //     throw new Error(response.status);
-            //     }
             return response.data;
-                // return await response.json();
         }
         catch(error)
         {
             console.log(error.message);
         }
-    //    return  fetch(url).then((response) => {
-    //         if (!response.ok) {
-    //           throw new Error(response.status);
-    //         }
-    //         return response.json();
-    //       })
     }
     incrementPage()
     {

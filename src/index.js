@@ -39,6 +39,7 @@ const handleSubmit=(event)=>{
         {
             loadBtn.classList.remove("is-hidden");
         }
+        scroll();
         simple.refresh();
     }).catch(error=>{
         Notify.failure(error.message,"Щось пішло не так");
@@ -58,6 +59,7 @@ pixabayApi.getPhotos().then(({hits})=>{
     const markup=createMarkup(hits)
     list.insertAdjacentHTML("beforeend",markup)
     simple.refresh();
+    scroll();
 }).catch(error=>{
     Notify.failure(error.message,"Щось пішло не так");
    clearPage();
@@ -76,3 +78,14 @@ loadBtn.addEventListener("click",onLoadMore)
 
 const simple=new SimpleLightbox('.gallery__link');
 
+function  scroll()
+{
+    const { height: cardHeight } = document
+  .querySelector(".gallery")
+  .firstElementChild.getBoundingClientRect();
+
+window.scrollBy({
+  top: cardHeight * 2,
+  behavior: "smooth",
+});
+}
